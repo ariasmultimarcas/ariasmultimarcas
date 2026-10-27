@@ -12,10 +12,11 @@
 </head>
 <body>
   <div class="topbar">COMPRA · VENTA · CONSIGNACIONES <span>Adolfo Gonzales Chaves, Buenos Aires</span></div>
+  
   <header class="site-header">
     <a class="brand" href="#" aria-label="Arias Multimarcas, inicio">
-     <img src="tu-logo.png" alt="Logo Arias Multimarcas" class="brand-logo">
-     <span class="brand-name">ARIAS <b>MULTIMARCAS</b><small>AUTOS · PICK UPS · USADOS Y 0 KM</small></span>
+      <img src="tu-logo.png" alt="Logo Arias Multimarcas" class="brand-logo">
+      <span class="brand-name">ARIAS <b>MULTIMARCAS</b><small>AUTOS · PICK UPS · USADOS Y 0 KM</small></span>
     </a>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
     <nav id="mainNav">
@@ -29,6 +30,7 @@
   </header>
 
   <main>
+    <!-- HERO / BANNER INICIAL -->
     <section class="hero" id="inicio">
       <div class="hero-content">
         <p class="eyebrow"><span></span> TU PRÓXIMO VEHÍCULO EMPIEZA ACÁ</p>
@@ -55,13 +57,21 @@
     <!-- STOCK DE VEHÍCULOS -->
     <section class="stock-section" id="stock">
       <div class="section-heading">
-        <div><p class="eyebrow dark-eyebrow">NUESTRO STOCK</p><h2>Vehículos destacados<span>.</span></h2><p class="section-copy">Conocé algunas de las opciones disponibles y consultanos por más información.</p></div>
+        <div>
+          <p class="eyebrow dark-eyebrow">NUESTRO STOCK</p>
+          <h2>Vehículos destacados<span>.</span></h2>
+          <p class="section-copy">Conocé algunas de las opciones disponibles y consultanos por más información.</p>
+        </div>
         <a class="text-link" href="#contacto">¿Buscás otro modelo? <span>↗</span></a>
       </div>
+      
       <div class="filters">
         <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar marca o modelo..." aria-label="Buscar marca o modelo"></label>
         <select id="typeFilter" aria-label="Filtrar por tipo">
-          <option value="todos">Todos los vehículos</option><option value="Auto">Autos</option><option value="Pick up">Pick ups</option><option value="SUV">SUV</option>
+          <option value="todos">Todos los vehículos</option>
+          <option value="Auto">Autos</option>
+          <option value="Pick up">Pick ups</option>
+          <option value="SUV">SUV</option>
         </select>
         <select id="yearFilter">
           <option value="todos">Todos los años</option>
@@ -73,18 +83,22 @@
           <option value="1990-2000">1990 a 2000</option>
         </select>
       </div>
+
       <div class="vehicle-grid" id="vehicleGrid"></div>
 
       <!-- BOTÓN CARGAR MÁS -->
-      <div class="load-more-container" style="text-align: center; margin-top: 35px;">
+      <div class="load-more-container">
         <button id="loadMoreBtn" class="load-more-btn" style="display: none;">Cargar más vehículos ▾</button>
       </div>
-
-      <p class="demo-note"></p>
     </section>
 
+    <!-- SECCIÓN DE CONTACTO -->
     <section class="contact-section" id="contacto">
-      <div><p class="eyebrow dark-eyebrow">ESTAMOS PARA AYUDARTE</p><h2>¿Lo hablamos?</h2><p>Escribinos y contanos qué vehículo estás buscando. Te respondemos por WhatsApp.</p></div>
+      <div>
+        <p class="eyebrow dark-eyebrow">ESTAMOS PARA AYUDARTE</p>
+        <h2>¿Lo hablamos?</h2>
+        <p>Escribinos y contanos qué vehículo estás buscando. Te respondemos por WhatsApp.</p>
+      </div>
       <a id="mainWhatsApp" class="btn btn-primary whatsapp-btn" href="#" target="_blank" rel="noopener">Consultar por WhatsApp <span>↗</span></a>
     </section>
 
@@ -144,21 +158,21 @@
     </section>
 
     <!-- SECCIÓN DE RESEÑAS DINÁMICAS -->
-    <section id="opiniones" class="reviews-section" style="padding: 80px 8%; background-color: #121212; color: #fff;">
-      <div class="reviews-container" style="max-width: 1200px; margin: 0 auto;">
-        <div class="reviews-header" style="text-align: center; margin-bottom: 40px;">
-          <span class="reviews-subtitle" style="color: #e5989b; font-weight: 700; letter-spacing: 2px; font-size: 0.8rem;">EXPERIENCIA DE NUESTROS CLIENTES</span>
-          <h2 style="color: #fff; font-size: 2.5rem; margin-top: 10px;">Opiniones de la gente<span style="color: var(--wine);">.</span></h2>
-          <p style="color: #aaa;">Leé lo que opinan nuestros clientes o dejanos tu reseña sobre tu experiencia en Arias Multimarcas.</p>
+    <section id="opiniones" class="reviews-section">
+      <div class="reviews-container">
+        <div class="reviews-header">
+          <span class="reviews-subtitle">EXPERIENCIA DE NUESTROS CLIENTES</span>
+          <h2>Opiniones de la gente<span>.</span></h2>
+          <p>Leé lo que opinan nuestros clientes o dejanos tu reseña sobre tu experiencia en Arias Multimarcas.</p>
         </div>
 
-        <div class="reviews-grid" id="reviewsGrid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 50px;">
+        <div class="reviews-grid" id="reviewsGrid">
           <div class="no-results">Cargando opiniones...</div>
         </div>
 
-        <div class="add-review-box" style="background: #1f1f1f; padding: 40px; border-radius: 12px; border: 1px solid #333; max-width: 800px; margin: 0 auto;">
-          <h3 style="color: #fff; text-align: center; margin-bottom: 5px;">Dejá tu opinión</h3>
-          <p style="color: #aaa; text-align: center; margin-bottom: 25px; font-size: 0.9rem;">Tu reseña se publicará automáticamente en nuestra web.</p>
+        <div class="add-review-box">
+          <h3>Dejá tu opinión</h3>
+          <p>Tu reseña se publicará automáticamente en nuestra web.</p>
 
           <form id="reviewForm" class="trade-in-form">
             <div class="form-row">
@@ -174,7 +188,7 @@
 
             <div class="form-group" style="margin: 15px 0;">
               <label style="display: block; margin-bottom: 8px;">Calificación *</label>
-              <div class="star-rating-picker" id="starPicker" style="font-size: 2rem; cursor: pointer; user-select: none;">
+              <div class="star-rating-picker" id="starPicker">
                 <span data-value="1">★</span>
                 <span data-value="2">★</span>
                 <span data-value="3">★</span>
@@ -197,7 +211,7 @@
       </div>
     </section>
 
-    <!-- BANNER INSTITUCIONAL DE CIERRE -->
+    <!-- BANNER INSTITUCIONAL DE CIERRE (NOSOTROS) -->
     <section id="nosotros" class="footer-banner">
       <div class="footer-banner-container">
         <div class="footer-logo-circle">
@@ -208,12 +222,12 @@
           <h2 class="footer-title">Trato directo.<br>Decisiones claras.</h2>
           <p class="footer-description">
             Más que vender vehículos, construimos confianza.
-Mi nombre es Juan Manuel Arias, soy de Adolfo Gonzales Chaves, Buenos Aires, comerciante y desarrollador web. Hace más de 5 años que formo parte del rubro automotor, un camino que me permitió adquirir experiencia, conocer las necesidades de los clientes y entender que detrás de cada vehículo hay una historia, un proyecto y un objetivo por cumplir.
-En ARIAS MULTIMARCAS trabajamos con un propósito claro: brindar una atención personalizada, transparente y profesional, acompañando a cada cliente durante todo el proceso de compra o venta de su vehículo.
-Creemos firmemente que un buen servicio es la mejor publicidad. Por eso, priorizamos el trato directo, la honestidad y el compromiso, buscando que cada persona que confía en nosotros tenga una experiencia positiva y nos vuelva a elegir.
-Nos encontramos en constante capacitación e incorporamos nuevas herramientas y tecnologías para mejorar nuestros procesos, ofrecer mejores soluciones y estar a la altura de las expectativas de quienes nos eligen.
-Nuestro objetivo no es simplemente concretar una operación, sino construir relaciones a largo plazo, basadas en la confianza, la responsabilidad y la palabra.
-SOMOS ARIAS MULTIMARCAS, SOMOS TU PRÓXIMO VEHICULO.
+            Mi nombre es Juan Manuel Arias, soy de Adolfo Gonzales Chaves, Buenos Aires, comerciante y desarrollador web. Hace más de 5 años que formo parte del rubro automotor, un camino que me permitió adquirir experiencia, conocer las necesidades de los clientes y entender que detrás de cada vehículo hay una historia, un proyecto y un objetivo por cumplir.<br><br>
+            En ARIAS MULTIMARCAS trabajamos con un propósito claro: brindar una atención personalizada, transparente y profesional, acompañando a cada cliente durante todo el proceso de compra o venta de su vehículo.
+            Creemos firmemente que un buen servicio es la mejor publicidad. Por eso, priorizamos el trato directo, la honestidad y el compromiso, buscando que cada persona que confía en nosotros tenga una experiencia positiva y nos vuelva a elegir.<br><br>
+            Nos encontramos en constante capacitación e incorporamos nuevas herramientas y tecnologías para mejorar nuestros procesos, ofrecer mejores soluciones y estar a la altura de las expectativas de quienes nos eligen.
+            Nuestro objetivo no es simplemente concretar una operación, sino construir relaciones a largo plazo, basadas en la confianza, la responsabilidad y la palabra.<br><br>
+            <strong>SOMOS ARIAS MULTIMARCAS, SOMOS TU PRÓXIMO VEHICULO.</strong>
           </p>
           <a class="footer-btn" href="https://wa.me/5492983586586?text=Hola,%20quiero%20consultar%20por%20los%20vehículos%20de%20ARIAS%20MULTIMARCAS." target="_blank" rel="noopener">
             Hablemos de tu próximo vehículo ↗
@@ -221,52 +235,55 @@ SOMOS ARIAS MULTIMARCAS, SOMOS TU PRÓXIMO VEHICULO.
         </div>
       </div>
     </section>
-  </main>
-<!-- ==========================================================================
-     SECCIÓN DE UBICACIÓN / MAPA
-     ========================================================================== -->
-<section class="location-section" id="ubicacion">
-  <div class="location-container">
-    <div class="location-info">
-      <span class="location-subtitle">VISITANOS</span>
-      <h2>Nuestra <span>Ubicación</span></h2>
-      <p>Te esperamos para asesorarte de manera personalizada y ver nuestro stock de vehículos en persona.</p>
-      
-      <div class="location-details">
-        <div class="location-item">
-          <span class="icon">📍</span>
-          <div>
-            <strong>Dirección</strong>
-            <p>Adolfo Gonzales Chaves, Buenos Aires</p>
+
+    <!-- SECCIÓN DE UBICACIÓN Y MAPA -->
+    <section class="location-section" id="ubicacion">
+      <div class="location-container">
+        <div class="location-info">
+          <span class="location-subtitle">VISITANOS EN NUESTRA AGENCIA</span>
+          <h2>Nuestra <span>Ubicación</span></h2>
+          <p>Te esperamos para asesorarte de manera personalizada, ver nuestro stock de vehículos en persona o realizar tu prueba de manejo.</p>
+          
+          <div class="location-details">
+            <div class="location-item">
+              <span class="icon">📍</span>
+              <div>
+                <strong>Dirección</strong>
+                <p>Adolfo Gonzales Chaves, Buenos Aires</p>
+              </div>
+            </div>
+            <div class="location-item">
+              <span class="icon">🕐</span>
+              <div>
+                <strong>Horarios de Atención</strong>
+                <p>Lunes a Sábados: Atención personalizada</p>
+              </div>
+            </div>
           </div>
+
+          <a href="https://maps.google.com/?q=-38.0372765994707,-60.096631026183545" target="_blank" rel="noopener" class="btn location-btn">
+            Abrir en Google Maps ↗
+          </a>
         </div>
-        <div class="location-item">
-          <span class="icon">🕐</span>
-          <div>
-            <strong>Horarios de Atención</strong>
-            <p>Lunes a Sábados: Atención personalizada</p>
-          </div>
+
+        <div class="location-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d620.914557862769!2d-60.096631026183545!3d-38.0372765994707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2sar!4v1793063142502!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
+    </section>
+  </main>
 
-      <a href="https://maps.google.com/?q=-38.0372765994707,-60.096631026183545" target="_blank" rel="noopener" class="btn btn-primary location-btn">
-        Abrir en Google Maps ↗
-      </a>
-    </div>
-
-    <div class="location-map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d620.914557862769!2d-60.096631026183545!3d-38.0372765994707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2sar!4v1793063142502!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
-  </div>
-</section>
+  <!-- PIE DE PÁGINA -->
   <footer>
     <a class="footer-brand" href="#">ARIAS <b>MULTIMARCAS</b></a>
     <span>Autos · Pick ups · 0 km</span>
     <span>© <span id="yearNow"></span> ARIAS MULTIMARCAS</span>
   </footer>
 
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
   <a id="floatingWhatsApp" class="floating-whatsapp" href="https://wa.me/5492983586586?text=Hola,%20quiero%20consultar%20por%20los%20vehículos%20de%20ARIAS%20MULTIMARCAS." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">☏</a>
 
+  <!-- MODAL DE IMÁGENES -->
   <div id="imageModal" class="image-modal">
     <button class="image-modal-close" id="modalClose" aria-label="Cerrar">&times;</button>
     <button class="modal-carousel-btn modal-prev" id="modalPrev" aria-label="Foto anterior">&#10094;</button>
