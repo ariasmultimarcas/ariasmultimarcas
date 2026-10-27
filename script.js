@@ -2,8 +2,8 @@
 const WHATSAPP_NUMBER = "5492983586586";
 
 // Tus URLs independientes de SheetDB
-const API_URL = "https://sheetdb.io/api/v1/he6rgrgrrj7cw";       // Base de datos de Autos
-const REVIEWS_API_URL = "https://sheetdb.io/api/v1/eo8vw8rxf2o8g"; // Base de datos de Reseñas
+const API_URL = "https://sheetdb.io/api/v1/15sgak5gg5zur";       // Base de datos de Autos
+const REVIEWS_API_URL = "https://sheetdb.io/api/v1/uh7jgm01bpmnk"; // Base de datos de Reseñas
 
 let vehicles = [];
 let reviews = [];
@@ -492,4 +492,57 @@ document.addEventListener("DOMContentLoaded", function () {
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, "_blank");
     });
   }
+});
+
+/* ==========================================================================
+   ACTUALIZACIÓN AUTOMÁTICA DE DÓLAR Y CLIMA (DINÁMICO)
+   ========================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Dólar Blue
+  fetch("https://dolarapi.com/v1/dolares/blue")
+    .then(response => response.json())
+    .then(data => {
+      const dolarElem = document.getElementById("dolarWidget");
+      if (dolarElem && data.compra && data.venta) {
+        dolarElem.innerHTML = `💵 Dólar Blue: Compra $${Math.round(data.compra)} / Venta $${Math.round(data.venta)}`;
+      }
+    })
+    .catch(error => {
+      const dolarElem = document.getElementById("dolarWidget");
+      if (dolarElem) dolarElem.style.display = "none";
+    });
+
+  // 2. Clima de Adolfo Gonzales Chaves con íconos dinámicos avanzados
+  fetch("https://api.open-meteo.com/v1/forecast?latitude=-38.0373&longitude=-60.0966&current=temperature_2m,weather_code&timezone=America/Argentina/Buenos_Aires")
+    .then(response => response.json())
+    .then(data => {
+      const climaElem = document.getElementById("climaWidget");
+      if (climaElem && data.current) {
+        const temp = Math.round(data.current.temperature_2m);
+        const code = data.current.weather_code;
+        
+        // Selector de íconos según el código meteorológico oficial
+        let icono = "🌤️";
+
+        if (code === 0) {
+          icono = "☀️";
+        } else if (code >= 1 && code <= 3) {
+          icono = "⛅";
+        } else if (code === 45 || code === 48) {
+          icono = "🌫️";
+        } else if (code >= 51 && code <= 67) {
+          icono = "🌧️";
+        } else if (code >= 71 && code <= 77) {
+          icono = "❄️";
+        } else if (code >= 95 && code <= 99) {
+          icono = "⚡";
+        }
+        
+        climaElem.innerHTML = `${icono} Chaves: ${temp}°C`;
+      }
+    })
+    .catch(error => {
+      const climaElem = document.getElementById("climaWidget");
+      if (climaElem) climaElem.style.display = "none";
+    });
 });

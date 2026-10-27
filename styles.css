@@ -1336,3 +1336,59 @@ footer {
     width: 100%;
   }
 }
+/* ==========================================================================
+   BARRA SUPERIOR (DÓLAR Y CLIMA AMPLIADOS)
+   ========================================================================== */
+.topbar {
+  min-height: 40px !important;
+  padding: 8px 6.5% !important;
+  background: var(--wine-dark, #45101b) !important;
+  color: #f8e9ec !important;
+  font-size: 11.5px !important; /* Letra un poco más grande y legible */
+  letter-spacing: 0.5px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 15px !important;
+  flex-wrap: wrap !important;
+}
+
+.topbar-left {
+  display: flex !important;
+  gap: 12px !important;
+  font-weight: 500 !important;
+}
+
+.topbar-left span {
+  letter-spacing: 0.3px !important;
+  opacity: 0.9 !important;
+}
+
+.topbar-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  font-weight: 700 !important;
+}
+
+.topbar-divider {
+  opacity: 0.4 !important;
+}
+
+#dolarWidget, #climaWidget {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 10.5px !important;
+    padding: 8px 4% !important;
+  }
+  .topbar-left span {
+    display: none !important;
+  }
+}
